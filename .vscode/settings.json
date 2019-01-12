@@ -1,8 +1,0 @@
-{
-    "php.suggest.basic": false,
-    "php.validate.enable": true,
-    "php.validate.executablePath": "c:/php/php.exe",
-    "php.validate.run": "onSave",
-    "editor.formatOnSave": true,
-    "telemetry.enableTelemetry": false,
-}
