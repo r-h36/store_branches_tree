@@ -107,11 +107,11 @@ class BranchTest extends TestCase
         $this->json('POST', route('branch.move', ['id' => 9, 'toBranchId' => 1]));
 
         $this->json('POST', route('branch.move', ['id' => 11, 'toBranchId' => 4]));
-        $this->json('POST', route('branch.move', ['id' => 12, 'toBranchId' => 11]));
+        $response1 = $this->json('POST', route('branch.move', ['id' => 12, 'toBranchId' => 11]));
         $this->json('POST', route('branch.move', ['id' => 13, 'toBranchId' => 11]));
         $this->json('POST', route('branch.move', ['id' => 14, 'toBranchId' => 12]));
         $this->json('POST', route('branch.move', ['id' => 15, 'toBranchId' => 12]));
-        $response1 = $this->json('POST', route('branch.move', ['id' => 16, 'toBranchId' => 10]));
+        $this->json('POST', route('branch.move', ['id' => 16, 'toBranchId' => 10]));
         $response2 = $this->json('POST', route('branch.move', ['id' => 17, 'toBranchId' => 10]));
 
         $response1->assertStatus(200);
