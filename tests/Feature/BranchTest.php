@@ -122,6 +122,14 @@ class BranchTest extends TestCase
         $contentArr = json_decode($jsonContent, true);
         $data = $contentArr['data'];
 
+        echo "\n";
+        echo "the view of a tree\n";
+        foreach ($data as $key => $node) {
+            echo str_repeat("-=", $node['level']);
+            echo 'id:' . $node['id'] . ' name:' . $node['name'];
+            echo "\n";
+        }
+        echo "\n";
         return $data;
     }
 
