@@ -11,8 +11,10 @@ services:
       - .:/srv/app
     links:
       - mysql
+      - mysql_testing
     environment:
       DB_HOST: mysql
+      TEST_DB_HOST: mysql_testing
   
   mysql:
     image: mysql:5.7
@@ -25,3 +27,15 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     volumes:
       - ./data/mysql:/var/lib/mysql
+  
+  mysql_testing:
+    image: mysql:5.7
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: ${TEST_DB_DATABASE}
+      MYSQL_USER: ${TEST_DB_USERNAME}
+      MYSQL_PASSWORD: ${TEST_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${TEST_DB_ROOT_PASSWORD}
+    volumes:
+      - ./data/mysql_testing:/var/lib/mysql
